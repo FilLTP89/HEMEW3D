@@ -225,7 +225,10 @@ def plot3Dcube(mat, Xvec, Yvec, Zvec, mask=None, cmap='viridis',
     m.set_array([])
     if title!='':
         ax.set_title(title)
-    plt.colorbar(m, shrink=0.7, pad=0.1, label=vlabel)
+    # plt.colorbar(m, shrink=0.7, pad=0.1, label=vlabel, cax=ax)
+    fig.subplots_adjust(right=0.8)
+    cbar_ax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
+    fig.colorbar(m, cax=cbar_ax)
     plt.tight_layout()
     
     plt.show()
